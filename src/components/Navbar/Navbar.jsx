@@ -5,7 +5,22 @@ import "./Navbar.css"
 const Navbar = (props) => {
 
     const pages = ["Home", "About", "Health", "Lifestyle", "Contact"]
-    const socialLinks = ["fa-facebook", "fa-instagram", "fa-linkedin", "fa-github"]
+    const socialLinks = [{
+        icon: "fa-facebook",
+        url: "#"
+        },
+        {
+        icon: "fa-instagram",
+        url: "#",
+        },
+        {icon: "fa-linkedin",
+        url: "#",
+        },
+        {
+        icon: "fa-github",
+        url: "#",
+        }
+    ]
 
     return (
         <nav>
@@ -26,7 +41,7 @@ const Navbar = (props) => {
 
                         {
                             socialLinks.map( link => ( 
-                                <li><a href="#"><i className={`fab fa-lg ${link}`}></i></a></li>
+                                <li><a target="_blank" href={link.url}><i className={`fab fa-lg ${link.icon}`}></i></a></li>
                              ) )
                         }
 
