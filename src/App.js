@@ -1,8 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from "./Navbar/Navbar";
-import { Home, About, Health, Lifestyle, Contact } from './components';
+import Navbar from "./components/Navbar/Navbar";
+import { Home, About, Health, Lifestyle, Contact } from '././pages';
+import { useState } from 'react';
 function App() {
+
   return (
+
     <div className="App">
       <Router>
         <Navbar />

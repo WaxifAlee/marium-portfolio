@@ -1,0 +1,45 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-white);
+}
+
+.main-container > .inner-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 0 0 15px var(--primary-black);
+}
+
+.main-container > .inner-container > .form-container > form{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    padding: 2rem;
+}
+.form-container > form > input, textarea {
+    padding: 1rem;
+    outline: none;
+    margin: 0.4rem;
+    font-family: 'Poppins';
+}
+
+.form-container > form > input[type=submit]{
+    background: var(--primary-black);
+    color: var(--primary-white);
+    border: none;
+    font-family: 'Poppins';
+    cursor: pointer;
+}
+
+.form-container > form > input[type=submit]:hover{
+    border: 2px solid var(--primary-black);
+    color: var(--primary-black);
+    background: var(--primary-white);
+    transition: 0.3s all ease;
+    font-weight: bold;
+}

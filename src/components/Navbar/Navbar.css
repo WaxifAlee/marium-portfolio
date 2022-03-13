@@ -51,7 +51,14 @@
 .btn-search{
     background: none;
     border: none;
+    padding: 0.4rem;
     cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-search:hover{
+    background: var(--primary-black);
+    color: white;
 }
 
 .fab{
@@ -88,9 +95,8 @@
     background-color: var(--primary-black);
     color: white;
     transition: 0.3s all ease-in;
+    border-radius: 5px;
 }
-
-
 
 
 .pages-links > ul > li > a{

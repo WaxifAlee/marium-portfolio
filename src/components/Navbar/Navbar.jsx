@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import "./Navbar.css"
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    const pages = ["Home", "About", "Health", "Lifestyle", "Contact"]
+    const socialLinks = ["fa-facebook", "fa-instagram", "fa-linkedin", "fa-github"]
+
     return (
         <nav>
 
             <div className="nav-section-top">
+
+            
 
                 <div className="search-bar-container">
                     <button className='btn-search' type='submit'>
@@ -16,10 +23,13 @@ const Navbar = () => {
 
                 <div className="social-links">
                     <ul>
-                        <li><a href="#"><i className="fab fa-lg fa-facebook"></i></a></li>
-                        <li><a href="#"><i className="fab fa-lg fa-instagram"></i></a></li>
-                        <li><a href="#"><i className="fab fa-lg fa-linkedin"></i></a></li>
-                        <li><a href="#"><i className="fab fa-lg fa-github"></i></a></li>
+
+                        {
+                            socialLinks.map( link => ( 
+                                <li><a href="#"><i className={`fab fa-lg ${link}`}></i></a></li>
+                             ) )
+                        }
+
                     </ul>
                 </div>
 
@@ -28,9 +38,7 @@ const Navbar = () => {
             <div className="nav-section-mid">
 
                 <div className="center logo-container">
-                    <a href="#" style={{ textDecoration: "none", color: "inherit" }}>
-                        <span>Marium Ilyas</span>
-                    </a>
+                        <span><Link style={{textDecoration: "none", color: "var(--primary-black)"}} to={"home"}>Marium Ilyas</Link></span>
                 </div>
 
             </div>
@@ -40,8 +48,8 @@ const Navbar = () => {
                 <div className="pages-links">
 
                     <ul>
-                        {['home', 'about', 'health', 'lifestyle', 'contact'].map((item) => (
-                            <li><a href={`/${item}`} > {item}</a></li>
+                        {pages.map((item) => (
+                            <li><Link to={`/${item}`} >{item}</Link></li>
                         ))}
                     </ul>
 
